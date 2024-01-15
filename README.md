@@ -1,4 +1,4 @@
-# ChatGPT Express Backend
+# ChatGPT Express Backend - ON PROGRESS
 
 This is a simple Express.js backend application that serves as an interface between a frontend application and the OpenAI GPT-3.5-turbo chat model. The frontend can send chat messages to the backend, and the backend sends those messages to the OpenAI API to generate responses.
 
