@@ -5,7 +5,7 @@ import cors from "cors";
 config();
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 const openai = new OpenAI();
 
