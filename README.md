@@ -41,8 +41,8 @@ The server will run on <http://localhost:3000>
 
 Send POST requests to /api/chat with a JSON body containing the chat message. The server will respond with the generated message from the OpenAI model.
 
-Example using cURL:
+Example using CURL:
 
    ```text
-   curl -X POST -H "Content-Type: application/json" -d '{"input":"Hello, how are you?"}' http://localhost:3001/api/chat
+   curl -X POST -H "Content-Type: application/json" -d '{"input":"Hello, how are you?"}' http://localhost:3000/api/chat
    ```
