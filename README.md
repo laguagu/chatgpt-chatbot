@@ -23,13 +23,13 @@ Before running the application, make sure you have the following:
    npm install
    ```
 
-Create a .env file in the root directory with your OpenAI API key:
+2. Create a .env file in the root directory with your OpenAI API key:
 
    ```text
    OPENAI_API_KEY=your-api-key-here
    ```
 
-Start the Express server:
+3. Start the Express server:
 
    ```bash
    npm run dev
