@@ -1,4 +1,4 @@
-# ChatGPT Express Backend
+# ChatGPT Express Backend - ON PROGRESS
 
 This is a simple Express.js backend application that serves as an interface between a frontend application and the OpenAI GPT-3.5-turbo chat model. The frontend can send chat messages to the backend, and the backend sends those messages to the OpenAI API to generate responses.
 
@@ -23,13 +23,13 @@ Before running the application, make sure you have the following:
    npm install
    ```
 
-Create a .env file in the root directory with your OpenAI API key:
+2. Create a .env file in the root directory with your OpenAI API key:
 
    ```text
    OPENAI_API_KEY=your-api-key-here
    ```
 
-Start the Express server:
+3. Start the Express server:
 
    ```bash
    npm run dev
@@ -41,8 +41,8 @@ The server will run on <http://localhost:3000>
 
 Send POST requests to /api/chat with a JSON body containing the chat message. The server will respond with the generated message from the OpenAI model.
 
-Example using cURL:
+Example using CURL:
 
    ```text
-   curl -X POST -H "Content-Type: application/json" -d '{"input":"Hello, how are you?"}' http://localhost:3001/api/chat
+   curl -X POST -H "Content-Type: application/json" -d '{"input":"Hello, how are you?"}' http://localhost:3000/api/chat
    ```
