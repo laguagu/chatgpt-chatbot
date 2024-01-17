@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { ChangeEvent, FormEvent, useState } from "react";
 import { Message } from "./types/chatTypes";
+import clsx from 'clsx';
 
 function Chatbox() {
   const [messages, setMessages] = useState<Message[]>([]);
