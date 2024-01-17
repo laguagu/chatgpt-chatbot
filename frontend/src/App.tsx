@@ -1,10 +1,7 @@
 /* eslint-disable */
 import { ChangeEvent, FormEvent, useState } from "react";
+import { Message } from "./types/chatTypes";
 
-interface Message {
-  text: string,
-  sender: "user" | "bot";
-}
 
 function Chatbox() {
   const [message, setMessage] = useState<Message[]>([]);
