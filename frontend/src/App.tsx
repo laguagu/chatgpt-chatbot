@@ -1,10 +1,23 @@
 /* eslint-disable */
-import { useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
+
+interface Message {
+  text: string,
+  sender: "user" | "bot";
+}
 
 function Chatbox() {
-  const [message, setMessage] = useState([]);
-  const [input, setInput] = useState("");
+  const [message, setMessage] = useState<Message[]>([]);
+  const [input, setUserInput] = useState<string>("");
 
+  const handeInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setUserInput(e.target.value)
+  }
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+  }
 
   return (
     <div className="flex flex-col h-screen bg-gray-200 p-4">
