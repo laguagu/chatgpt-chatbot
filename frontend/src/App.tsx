@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { ChangeEvent, FormEvent, useState } from "react";
 import { Message } from "./types/chatTypes";
-import clsx from 'clsx';
+import clsx from "clsx";
 
 function Chatbox() {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -13,17 +13,22 @@ function Chatbox() {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setMessages([...messages, { text: userInput, sender: "user" }]);
-    setMessages([...messages, { text: "api vastaus", sender: "bot" }]);
+    setMessages((prevMessages) => [
+      ...prevMessages,
+      { text: userInput, sender: "user" },
+      { text: "Chatbotin vastaus", sender: "bot" },
+    ]);
+
     setUserInput("");
+    console.log(messages);
   };
 
   return (
     <div className="flex flex-col h-screen bg-gray-200 p-4">
       <div className="flex-1 overflow-y-auto ">
-        {messages.map((messages, index) => (
-          <div key={index}>
-            {messages.text}
+        {messages.map((message, index) => (
+          <div key={index} className={clsx({})}>
+            {message.text}
           </div>
         ))}
       </div>
