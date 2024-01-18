@@ -27,7 +27,15 @@ function Chatbox() {
     <div className="flex flex-col h-screen bg-gray-200 p-4">
       <div className="flex-1 overflow-y-auto ">
         {messages.map((message, index) => (
-          <div key={index} className={clsx({})}>
+          <div
+            key={index}
+            className={clsx(
+              "text-2xl items-center flex bg-slate-500",
+              {
+              "text-red-500": message.sender === "user",
+              "text-green-500 justify-end": message.sender === "bot",
+            })}
+          >
             {message.text}
           </div>
         ))}
