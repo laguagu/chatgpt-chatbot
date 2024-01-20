@@ -1,5 +1,6 @@
 /* eslint-disable */
 import { ChangeEvent, FormEvent, useState } from "react";
+import { UserIcon, RocketLaunchIcon } from "@heroicons/react/24/outline";
 import { Message } from "./types/chatTypes";
 import clsx from "clsx";
 import chatbotApi from "./api/chatbotApi";
@@ -22,7 +23,7 @@ function Chatbox() {
     try {
       // Hae chatbotin vastaus
       const botResponse = await chatbotApi(userInput);
-      
+
       // Lisää chatbotin vastaus viesti taulukkoon
       setMessages((prevMessages) => [
         ...prevMessages,
@@ -33,7 +34,6 @@ function Chatbox() {
     }
 
     setUserInput("");
-
   };
 
   return (
@@ -42,11 +42,19 @@ function Chatbox() {
         {messages.map((message, index) => (
           <div
             key={index}
-            className={clsx("text-2xl items-center flex bg-slate-500", {
-              "text-red-500": message.sender === "user",
-              "text-green-500 justify-end": message.sender === "bot",
-            })}
+            className={clsx(
+              "text-2xl items-center flex text-gray-900 font-mono",
+              {
+                "justify-start": message.sender === "user",
+                "justify-end": message.sender === "bot",
+              }
+            )}
           >
+            {message.sender === "user" ? (
+              <UserIcon className="w-5 mr-1 ml-1" />
+            ) : (
+              <RocketLaunchIcon className="w-4 mr-1 ml-1" />
+            )}
             {message.text}
           </div>
         ))}
